@@ -1,0 +1,24 @@
+.define-container {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.define-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2563eb; /* blue-600 */
+  margin-bottom: 1rem;
+}
+
+.define-text {
+  color: #4b5563; /* gray-600 */
+}
+
+.page-title {
+  font-size: 1.5rem;       /* text-2xl */
+  font-weight: 700;        /* font-bold */
+  color: #1f2937;          /* text-gray-800 */
+  margin-bottom: 1.5rem;   /* mb-6 */
+}

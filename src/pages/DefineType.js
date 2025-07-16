@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import ListBox from '../ui/ListBox';
-import TransferButton from '../ui/TransferButton';
-import Button from '../ui/Button';
+import ListBox from '../components/ui/ListBox';
+import TransferButton from '../components/ui/TransferButton';
+import Button from '../components/ui/Button';
+import DefineTemplate from '../components/common/DefineTemplate';
 
 const DefineType = () => {
   const [availableItems, setAvailableItems] = useState(['Gallon', 'Quart']);
@@ -39,8 +40,8 @@ const DefineType = () => {
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-xl font-bold text-blue-600 mb-6">Defined Type</h2>
-      
+      {/* <h2 className="text-xl font-bold text-blue-600 mb-6">Defined Type</h2> */}
+       <DefineTemplate title="Define Type"></DefineTemplate>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div>
           <ListBox

@@ -1,11 +1,11 @@
 import React from 'react';
+import '../../styles/NavigationBar.css';
 
 const NavigationBar = () => {
   return (
-    <div className="h-16 bg-blue-600 shadow-md">
-      <div className="flex items-center justify-between h-full px-6">
-        <div className="text-white font-semibold">Configuration Management</div>
-        {/* <div className="text-white text-sm">Navigation will go here</div> */}
+    <div className="navbar">
+      <div className="navbar-content">
+        <div className="navbar-title">Configuration Management</div>
       </div>
     </div>
   );
