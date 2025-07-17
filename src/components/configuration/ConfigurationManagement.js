@@ -2,7 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from '../common/Layout';
 import TabNavigation from './TabNavigation';
 import DefineType from '../../pages/DefineType';
-import DefineEmitter from '../../pages/DefineEmitter';
+import AddNewItemForm from '../../pages/AddNewItemForm';
+import DefinedItem from '../../pages/DefinedItem';
 import DefineCategory from '../../pages/DefineCategory';
 import DefineScope from '../../pages/DefineScope';
 import '../../styles/Common.css';
@@ -17,7 +18,11 @@ const ConfigurationManagement = () => {
 
         <Routes>
           <Route path="type" element={<DefineType />} />
-          <Route path="emitter" element={<DefineEmitter />} />
+          <Route path="emitter" element={ <>
+                                         <AddNewItemForm />
+                                          <DefinedItem />
+                                          </>
+                                         } />
           <Route path="category" element={<DefineCategory />} />
           <Route path="scope" element={<DefineScope />} />
         </Routes>
