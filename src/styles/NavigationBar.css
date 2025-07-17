@@ -1,90 +1,34 @@
+/* NavigationBar.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .navbar {
-  height: 4rem; 
-  background-color: #2563eb;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @apply h-16 bg-blue-600 shadow-md;
 }
 
 .navbar-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  padding: 0 1.5rem;
+  @apply flex items-center justify-between h-full px-6;
 }
 
 .navbar-title {
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.navbar-subtext {
-  color: white;
-  font-size: 0.875rem;
-}
-
-/* Layout.css */
-.layout-container {
-  min-height: 100vh;
-  background-color: #f3f4f6; 
-}
-
-.layout-content {
-  padding: 1.5rem; 
+  @apply text-white font-semibold text-base;
 }
 
 /* TabNavigation.css */
-.tab-navigation {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.tab-button {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  background-color: #e5e7eb; 
-  color: #374151;
-  text-decoration: none;
-  transition: background-color 0.2s;
-}
-
-.tab-button:hover {
-  background-color: #d1d5db; 
-}
-
-.tab-button.active {
-  background-color: #2563eb; 
-  color: white;
-}
-
 .tab-container {
-  display: flex;
-  gap: 0.25rem; /* space-x-1 */
-  margin-bottom: 1.5rem; /* mb-6 */
+  @apply flex gap-1 mb-6;
 }
-/* 
+
 .tab-button {
-  padding: 0.5rem 1rem; 
-  font-size: 0.875rem; 
-  font-weight: 500; 
-  border-top-left-radius: 0.5rem; 
-  border-top-right-radius: 0.5rem;
-  transition: background-color 0.2s ease-in-out;
-  background-color: #e5e7eb; 
-  color: #374151; 
-  border: none;
-  cursor: pointer;
-} */
+  @apply px-4 py-2 text-sm font-medium rounded-t-lg bg-gray-200 text-gray-700 no-underline transition-colors duration-200;
+}
 
 .tab-button:hover {
-  background-color: #d1d5db; /* hover:bg-gray-300 */
+  @apply bg-gray-300;
 }
 
 .tab-button.active {
-  background-color: #2563eb; /* bg-blue-600 */
-  color: white;
+  @apply bg-blue-600 text-white;
 }

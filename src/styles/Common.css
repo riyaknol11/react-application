@@ -1,24 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .define-container {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  @apply bg-white p-6 rounded-lg shadow-lg;
 }
 
 .define-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #2563eb; /* blue-600 */
-  margin-bottom: 1rem;
+  @apply text-xl font-bold text-blue-600 mb-4;
 }
 
 .define-text {
-  color: #4b5563; /* gray-600 */
+  @apply text-gray-600;
 }
 
 .page-title {
-  font-size: 1.5rem;       /* text-2xl */
-  font-weight: 700;        /* font-bold */
-  color: #1f2937;          /* text-gray-800 */
-  margin-bottom: 1.5rem;   /* mb-6 */
+  @apply text-2xl font-bold text-gray-800 mb-6;
+}
+
+.max-width-container {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Layout.css */
+.layout-container {
+  @apply min-h-screen bg-gray-100;
+}
+
+.layout-content {
+  @apply p-6;
 }

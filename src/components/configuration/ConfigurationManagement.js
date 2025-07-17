@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../common/Layout';
-import TabNavigation from './TabNavigation';
+import TabNavigation from '../common/TabNavigation';
 import DefineType from '../../pages/DefineType';
 import DefineEmitter from '../../pages/DefineEmitter';
 import DefineCategory from '../../pages/DefineCategory';
@@ -10,7 +10,7 @@ import '../../styles/Common.css';
 const ConfigurationManagement = () => {
   return (
     <Layout>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-width-container">
           <h1 className="page-title">Configuration Management</h1>
         
         <TabNavigation />
