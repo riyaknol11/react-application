@@ -3,9 +3,9 @@ import NavigationBar from './NavigationBar';
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="layout-container">
       <NavigationBar />
-      <div className="p-6">
+      <div className="layout-content">
         {children}
       </div>
     </div>
