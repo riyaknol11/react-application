@@ -23,3 +23,164 @@
   margin-bottom: 1.5rem;   /* mb-6 */
 }
 
+.container {
+  padding: 1.5rem;
+  background-color: #2563eb; /* Tailwind bg-blue-600 */
+  color: #fff;
+  border-radius: 0.5rem;
+  max-width: 64rem; /* Tailwind max-w-5xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.formWrapper {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 14rem;
+  width: 24rem;
+}
+
+.input,
+.textarea {
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-right: 14rem;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #3b82f6;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.saveButton:hover {
+  background: #2563eb;
+}
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #93c5fd;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.resetButton:hover {
+  background: #60a5fa;
+}
+
+/* Additional styles for table-specific elements */
+.table-container {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  color: black;
+  overflow: auto;
+  max-height: 20rem;
+}
+
+.scope-table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.table-header {
+  background-color: #bfdbfe;
+}
+
+.table-cell {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+}
+
+.table-row:hover {
+  background-color: #eff6ff;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.edit-btn,
+.delete-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.edit-btn:disabled,
+.delete-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.edit-btn:disabled:hover,
+.delete-btn:disabled:hover {
+  background-color: inherit;
+}
+
+.edit-btn {
+  background-color: #3b82f6;
+}
+
+.edit-btn:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background-color: #dc2626;
+}

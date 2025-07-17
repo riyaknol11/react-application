@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Pencil, Trash2 } from "lucide-react";
+import '../../styles/Common.css';
 
 const scopesData = [
-  { name: "Scope 1", description: "Direct emissions from owned or controlled sources", active: true },
-  { name: "Scope 2", description: "Indirect emissions from the generation of purchased electricity, steam, heating and cooling", active: false },
-  { name: "Scope 3", description: "All other indirect emissions that occur in a company’s value chain", active: true },
+  { name: "Scope 1", description: "Direct emissions from owned or controlled sources", active: true, selected: false },
+  { name: "Scope 2", description: "Indirect emissions from the generation of purchased electricity, steam, heating and cooling", active: false, selected: false },
+  { name: "Scope 3", description: "All other indirect emissions that occur in a company's value chain", active: true, selected: false },
 ];
 
 export default function DefinedScope() {
@@ -12,29 +13,38 @@ export default function DefinedScope() {
   const [scopes, setScopes] = useState(scopesData);
 
   const handleDelete = () => {
-    if (selectedIndex === null) return;
-    const updated = scopes.filter((_, idx) => idx !== selectedIndex);
+    const selectedForDeletion = scopes.filter((scope, idx) => scope.selected);
+    if (selectedForDeletion.length === 0) return;
+    
+    const updated = scopes.filter((scope) => !scope.selected);
     setScopes(updated);
     setSelectedIndex(null);
   };
 
+  const handleCheckboxChange = (idx) => {
+    const updated = scopes.map((scope, index) => 
+      index === idx ? { ...scope, selected: !scope.selected } : scope
+    );
+    setScopes(updated);
+  };
+
   return (
-    <div className="p-6 bg-blue-600 text-white rounded-lg max-w-5l mx-auto">
-      <h2 className="text-xl font-semibold mb-4">Defined Scope</h2>
-      <div className="bg-white p-4 rounded-md text-black overflow-auto max-h-80">
-        <table className="w-full text-center border-collapse">
-          <thead className="bg-blue-200">
+    <div className="container">
+      <h2 className="heading">Defined Scope</h2>
+      <div className="table-container">
+        <table className="scope-table">
+          <thead className="table-header">
             <tr>
-              <th className="p-2 border">Scope</th>
-              <th className="p-2 border">Description</th>
+              <th className="table-cell">Scope</th>
+              <th className="table-cell">Description</th>
             </tr>
           </thead>
           <tbody>
             {scopes.map((scope, idx) => (
-              <tr key={idx} className="hover:bg-blue-50">
-                <td className="border p-2">{scope.name}</td>
-                <td className="border p-2">{scope.description}</td>
-                <td className="border p-2">
+              <tr key={idx} className="table-row">
+                <td className="table-cell">{scope.name}</td>
+                <td className="table-cell">{scope.description}</td>
+                <td className="table-cell">
                   <input
                     type="radio"
                     name="selectItem"
@@ -42,26 +52,29 @@ export default function DefinedScope() {
                     onChange={() => setSelectedIndex(idx)}
                   />
                 </td>
-                <td className="border p-2">
-                  <input type="checkbox" checked={scope.active} readOnly />
+                <td className="table-cell">
+                  <input 
+                    type="checkbox" 
+                    checked={scope.selected || false}
+                    onChange={() => handleCheckboxChange(idx)}
+                  />
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
-      <div className="flex gap-4 justify-end mt-4">
+      <div className="actions">
         <button
-          className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="edit-btn"
           disabled={selectedIndex === null}
           onClick={() => alert("Edit functionality")}
         >
           <Pencil size={16} /> Edit
         </button>
         <button
-          className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-          disabled={selectedIndex === null}
+          className="delete-btn"
+          disabled={!scopes.some(scope => scope.selected)}
           onClick={handleDelete}
         >
           <Trash2 size={16} /> Delete
