@@ -4,7 +4,8 @@ import TabNavigation from './TabNavigation';
 import DefineType from '../../pages/DefineType';
 import DefineEmitter from '../../pages/DefineEmitter';
 import DefineCategory from '../../pages/DefineCategory';
-import DefineScope from '../../pages/DefineScope';
+import AddNewScopeForm from '../../pages/define_scope/AddNewScopeForm';
+import DefinedScope from '../../pages/define_scope/DefinedScope';
 import '../../styles/Common.css';
 
 const ConfigurationManagement = () => {
@@ -19,7 +20,12 @@ const ConfigurationManagement = () => {
           <Route path="type" element={<DefineType />} />
           <Route path="emitter" element={<DefineEmitter />} />
           <Route path="category" element={<DefineCategory />} />
-          <Route path="scope" element={<DefineScope />} />
+          <Route path="scope" element={ <>
+            <AddNewScopeForm />
+            <div className="mt-6">
+              <DefinedScope />
+            </div>
+          </>} />
         </Routes>
       </div>
     </Layout>
