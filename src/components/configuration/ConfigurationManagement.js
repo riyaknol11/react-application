@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Layout from '../common/Layout';
 import TabNavigation from './TabNavigation';
 import DefineType from './DefineType';
+import CategoryManager from './CategoryManager';
 
 const ConfigurationManagement = () => {
   const [activeTab, setActiveTab] = useState('type');
@@ -18,12 +19,7 @@ const ConfigurationManagement = () => {
           </div>
         );
       case 'category':
-        return (
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-xl font-bold text-blue-600 mb-4">Define Category</h2>
-            <p className="text-gray-600">Define Category content will go here</p>
-          </div>
-        );
+        return <CategoryManager />;
       case 'scope':
         return (
           <div className="bg-white p-6 rounded-lg shadow-lg">
